@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — AGRI-TOGO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f5f0;
+      color: #2d2d2d;
+      line-height: 1.6;
+    }
+
+    /* ─── Navigation ───────────────────────────────────────── */
+    nav {
+      background: #1a3c1a;
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { color: #fff; font-weight: 700; font-size: 18px; letter-spacing: 0.5px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: #c8e6c9;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
+
+    /* ─── Layout principal 2 colonnes ──────────────────────── */
+    .main-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ─── Colonne gauche : Header / Présentation ───────────── */
+    .left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .left-col h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #1a3c1a;
+      line-height: 1.2;
+    }
+    .left-col p {
+      font-size: 15px;
+      color: #555;
+      max-width: 400px;
+    }
+    .btn-adhesion {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a3c1a;
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+      width: fit-content;
+    }
+    .btn-adhesion:hover { background: #2e5c2e; transform: translateY(-2px); }
+    .left-illustration {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #2e5c2e 0%, #4a8c4a 100%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 64px;
+      margin-top: 8px;
+    }
+
+    /* ─── Colonne droite : Formulaire ──────────────────────── */
+    .form-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+    }
+    .form-card h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a3c1a;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .form-card h2 i { color: #4a8c4a; }
+
+    .form-group { margin-bottom: 18px; }
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a3c1a;
+      margin-bottom: 6px;
+    }
+    .form-label .req { color: #c0392b; }
+
+    .input-wrapper { position: relative; }
+    .input-wrapper .icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #4a8c4a;
+      font-size: 14px;
+    }
+    .input-wrapper input,
+    .input-wrapper select,
+    .input-wrapper textarea {
+      width: 100%;
+      padding: 11px 12px 11px 38px;
+      border: 1.5px solid #d4d4c8;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #2d2d2d;
+      background: #fafaf8;
+      transition: border-color .2s, box-shadow .2s;
+      font-family: inherit;
+      outline: none;
+    }
+    .input-wrapper input::placeholder,
+    .input-wrapper textarea::placeholder { color: #aaa; }
+    .input-wrapper input:focus,
+    .input-wrapper select:focus,
+    .input-wrapper textarea:focus {
+      border-color: #4a8c4a;
+      box-shadow: 0 0 0 3px rgba(74,140,74,.15);
+    }
+    .input-wrapper.error input,
+    .input-wrapper.error select,
+    .input-wrapper.error textarea { border-color: #c0392b; }
+    .input-wrapper textarea {
+      padding-left: 38px;
+      min-height: 120px;
+      resize: vertical;
+    }
+    .textarea-wrapper { position: relative; }
+    .textarea-wrapper .resize-icon {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      color: #bbb;
+      font-size: 12px;
+      pointer-events: none;
+    }
+
+    .error-msg {
+      color: #c0392b;
+      font-size: 12px;
+      margin-top: 5px;
+      display: none;
+    }
+    .error-msg.show { display: block; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 10px;
+      background: #1a3c1a;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .submit-btn:hover { background: #2e5c2e; }
+    .submit-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 30px 16px;
+    }
+    .success-msg.show { display: block; }
+    .success-msg i { font-size: 48px; color: #4a8c4a; margin-bottom: 12px; }
+    .success-msg h3 { font-size: 18px; color: #1a3c1a; margin-bottom: 6px; }
+    .success-msg p { font-size: 14px; color: #666; }
+
+    /* ─── Section Coordonnées ──────────────────────────────── */
+    .coords-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+    }
+    .coords-section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a3c1a;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .coords-section h2 i { color: #4a8c4a; }
+    .coords-section h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #d4d4c8;
+      margin-left: 12px;
+    }
+    .coords-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .coord-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+      transition: transform .2s;
+    }
+    .coord-card:hover { transform: translateY(-3px); }
+    .coord-card i {
+      font-size: 26px;
+      color: #4a8c4a;
+      margin-bottom: 12px;
+    }
+    .coord-card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a3c1a;
+      margin-bottom: 6px;
+    }
+    .coord-card p {
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* ─── Footer ───────────────────────────────────────────── */
+    footer {
+      background: #1a3c1a;
+      color: #c8e6c9;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+    }
+    footer a { color: #a5d6a7; text-decoration: none; margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ─── Modal Adhésion ───────────────────────────────────── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: #fff;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,.2);
+      animation: modalIn .3s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(20px) scale(.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal-header {
+      background: linear-gradient(135deg, #2e5c2e 0%, #4a8c4a 100%);
+      color: #fff;
+      padding: 22px 24px;
+      border-radius: 14px 14px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-header h2 { font-size: 17px; font-weight: 700; }
+    .modal-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,.2); }
+    .modal-body { padding: 24px; }
+    .modal-body .form-group { margin-bottom: 16px; }
+    .modal-body .input-wrapper input,
+    .modal-body .input-wrapper select,
+    .modal-body .input-wrapper textarea {
+      background: #f8f8f5;
+    }
+    .modal-body .submit-btn { margin-top: 6px; }
+    .modal-success {
+      display: none;
+      text-align: center;
+      padding: 36px 20px;
+    }
+    .modal-success.show { display: block; }
+    .modal-success i { font-size: 48px; color: #4a8c4a; margin-bottom: 12px; }
+    .modal-success h3 { font-size: 18px; color: #1a3c1a; margin-bottom: 6px; }
+    .modal-success p { font-size: 14px; color: #666; }
+
+    /* ─── Responsive ───────────────────────────────────────── */
+    @media (max-width: 800px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .left-illustration { height: 160px; }
+      .left-col h1 { font-size: 28px; }
+      .nav-links { display: none; }
+    }
+  </style>
+<base target="_blank">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo"><i class="fa-solid fa-seedling"></i> AGRI-TOGO</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="produits.html">Nos produits</a></li>
+      <li><a href="actualite.html">Actualités</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Layout 2 colonnes : Header + Formulaire -->
+  <div class="main-layout">
+
+    <!-- Colonne gauche -->
+    <div class="left-col">
+      <div>
+        <h1>Contactez-nous</h1>
+        <p>Vous avez une question, un projet ou vous souhaitez collaborer avec la coopérative AGRI-TOGO ? Écrivez-nous, nous vous répondrons dans les plus brefs délais.</p>
+      </div>
+      <button class="btn-adhesion" id="btnOpenAdhesion">
+        <i class="fa-solid fa-user-plus"></i> Adhérer à la coopérative
+      </button>
+      <div class="left-illustration">
+        <i class="fa-solid fa-envelope-open-text"></i>
+      </div>
+    </div>
+
+    <!-- Colonne droite : Formulaire -->
+    <div class="form-card">
+      <h2><i class="fa-solid fa-paper-plane"></i> Formulaire de contact</h2>
+      <form id="contactForm" novalidate>
+        <div class="form-group">
+          <label class="form-label">Nom<span class="req">*</span></label>
+          <div class="input-wrapper" id="wrap-nom">
+            <i class="fa-solid fa-user icon"></i>
+            <input type="text" id="nom" placeholder="Votre nom complet">
+          </div>
+          <div class="error-msg" id="err-nom">Veuillez saisir votre nom.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email<span class="req">*</span></label>
+          <div class="input-wrapper" id="wrap-email">
+            <i class="fa-solid fa-envelope icon"></i>
+            <input type="email" id="email" placeholder="exemple@email.com">
+          </div>
+          <div class="error-msg" id="err-email">Veuillez saisir une adresse email valide.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Sujet<span class="req">*</span></label>
+          <div class="input-wrapper" id="wrap-sujet">
+            <i class="fa-solid fa-tag icon"></i>
+            <input type="text" id="sujet" placeholder="Objet de votre message">
+          </div>
+          <div class="error-msg" id="err-sujet">Veuillez indiquer un sujet.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Message<span class="req">*</span></label>
+          <div class="textarea-wrapper">
+            <div class="input-wrapper" id="wrap-message">
+              <i class="fa-solid fa-pen icon" style="top:22px;transform:none;"></i>
+              <textarea id="message" placeholder="Votre message..."></textarea>
+            </div>
+            <i class="fa-solid fa-up-right-and-down-left-from-center resize-icon"></i>
+          </div>
+          <div class="error-msg" id="err-message">Veuillez écrire un message.</div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <i class="fa-solid fa-paper-plane"></i> Envoyer
+        </button>
+      </form>
+
+      <div class="success-msg" id="successContact">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>Message envoyé !</h3>
+        <p>Merci pour votre message. Nous vous recontacterons rapidement.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Section Coordonnées -->
+  <section class="coords-section">
+    <h2><i class="fa-solid fa-address-card"></i> Nos coordonnées</h2>
+    <div class="coords-grid">
+      <div class="coord-card">
+        <i class="fa-solid fa-location-dot"></i>
+        <h4>Adresse</h4>
+        <p>123 Rue des Agriculteurs<br>Lomé, Togo</p>
+      </div>
+      <div class="coord-card">
+        <i class="fa-solid fa-phone"></i>
+        <h4>Téléphone</h4>
+        <p>+228 90 12 34 56</p>
+      </div>
+      <div class="coord-card">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>Email</h4>
+        <p>contact@agri-togo.tg</p>
+      </div>
+      <div class="coord-card">
+        <i class="fa-solid fa-clock"></i>
+        <h4>Horaires</h4>
+        <p>Lun – Ven : 8h – 17h<br>Sam : 8h – 12h</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Adhésion -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-user-plus"></i> Demande d'adhésion</h2>
+        <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <form id="adhesionForm" novalidate>
+          <div class="form-group">
+            <label class="form-label">Nom complet<span class="req">*</span></label>
+            <div class="input-wrapper" id="wrap-adh-nom">
+              <i class="fa-solid fa-user icon"></i>
+              <input type="text" id="adh-nom" placeholder="Prénom et nom">
+            </div>
+            <div class="error-msg" id="err-adh-nom">Veuillez saisir votre nom.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email<span class="req">*</span></label>
+            <div class="input-wrapper" id="wrap-adh-email">
+              <i class="fa-solid fa-envelope icon"></i>
+              <input type="email" id="adh-email" placeholder="exemple@email.com">
+            </div>
+            <div class="error-msg" id="err-adh-email">Adresse email invalide.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Téléphone<span class="req">*</span></label>
+            <div class="input-wrapper" id="wrap-adh-tel">
+              <i class="fa-solid fa-phone icon"></i>
+              <input type="tel" id="adh-tel" placeholder="+228 90 12 34 56">
+            </div>
+            <div class="error-msg" id="err-adh-tel">Numéro invalide.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Type de structure<span class="req">*</span></label>
+            <div class="input-wrapper" id="wrap-adh-type">
+              <i class="fa-solid fa-building icon"></i>
+              <select id="adh-type">
+                <option value="" disabled selected>Choisissez votre structure</option>
+                <option value="producteur">Producteur individuel</option>
+                <option value="cooperative">Coopérative agricole</option>
+                <option value="compagnie">Compagnie / Entreprise</option>
+                <option value="ong">ONG / Association</option>
+                <option value="groupement">Groupement villageois</option>
+                <option value="institution">Institution publique</option>
+                <option value="particulier">Particulier / Consommateur</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="error-msg" id="err-adh-type">Veuillez sélectionner un type.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Nom de la structure</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-tag icon"></i>
+              <input type="text" id="adh-structure" placeholder="Nom de votre coopérative, entreprise, ONG...">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Zone géographique d'activité<span class="req">*</span></label>
+            <div class="input-wrapper" id="wrap-adh-zone">
+              <i class="fa-solid fa-map-location-dot icon"></i>
+              <select id="adh-zone">
+                <option value="" disabled selected>Sélectionnez une région</option>
+                <option value="maritime">Région Maritime (Lomé, Tabligbo...)</option>
+                <option value="plateaux">Région des Plateaux (Atakpamé, Kpalimé...)</option>
+                <option value="centrale">Région Centrale (Sokodé, Tchamba...)</option>
+                <option value="kara">Région de la Kara (Kara, Dapaong...)</option>
+                <option value="savanes">Région des Savanes (Dapaong, Cinkassé...)</option>
+                <option value="international">Hors Togo</option>
+              </select>
+            </div>
+            <div class="error-msg" id="err-adh-zone">Veuillez sélectionner une zone.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Produits d'intérêt</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-wheat-awn icon"></i>
+              <select id="adh-produits">
+                <option value="" disabled selected>Sélectionnez un produit principal</option>
+                <option value="mais">Maïs</option>
+                <option value="manioc">Manioc</option>
+                <option value="ananas">Ananas</option>
+                <option value="riz">Riz</option>
+                <option value="soja">Soja</option>
+                <option value="transformes">Produits transformés</option>
+                <option value="divers">Divers / Tous</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Motivation / Message<span class="req">*</span></label>
+            <div class="input-wrapper" id="wrap-adh-msg">
+              <i class="fa-solid fa-pen icon" style="top:22px;transform:none;"></i>
+              <textarea id="adh-msg" placeholder="Pourquoi souhaitez-vous rejoindre AGRI-TOGO ? Décrivez votre projet ou vos attentes..."></textarea>
+            </div>
+            <div class="error-msg" id="err-adh-msg">Veuillez décrire votre motivation.</div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="btnAdhesionSubmit">
+            <i class="fa-solid fa-paper-plane"></i> Soumettre ma demande
+          </button>
+        </form>
+
+        <div class="modal-success" id="successAdhesion">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3>Demande envoyée !</h3>
+          <p>Merci pour votre intérêt. Notre équipe étudiera votre demande et vous contactera sous 48h.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      <a href="index.html">Accueil</a> |
+      <a href="apropos.html">À propos</a> |
+      <a href="produits.html">Produits</a> |
+      <a href="actualite.html">Actualités</a> |
+      <a href="contact.html">Contact</a>
+    </p>
+    <p style="margin-top:10px; opacity:.7;">© 2026 AGRI-TOGO — Coopérative agricole du Togo</p>
+  </footer>
+
+  <script>
+    /* ═══════════════════════════════════════════════════════════
+       FORMULAIRE DE CONTACT
+       ═══════════════════════════════════════════════════════════ */
+    (function() {
+      const form   = document.getElementById('contactForm');
+      const nom    = document.getElementById('nom');
+      const email  = document.getElementById('email');
+      const sujet  = document.getElementById('sujet');
+      const msg    = document.getElementById('message');
+      const btn    = document.getElementById('submitBtn');
+      const success = document.getElementById('successContact');
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      function setErr(wrapId, errId, show) {
+        document.getElementById(wrapId).classList.toggle('error', show);
+        document.getElementById(errId).classList.toggle('show', show);
+      }
+
+      nom.addEventListener('blur', () => setErr('wrap-nom', 'err-nom', nom.value.trim() === ''));
+      nom.addEventListener('input', () => setErr('wrap-nom', 'err-nom', false));
+
+      email.addEventListener('blur', () => setErr('wrap-email', 'err-email', !emailRegex.test(email.value.trim())));
+      email.addEventListener('input', () => setErr('wrap-email', 'err-email', false));
+
+      sujet.addEventListener('blur', () => setErr('wrap-sujet', 'err-sujet', sujet.value.trim() === ''));
+      sujet.addEventListener('input', () => setErr('wrap-sujet', 'err-sujet', false));
+
+      msg.addEventListener('blur', () => setErr('wrap-message', 'err-message', msg.value.trim() === ''));
+      msg.addEventListener('input', () => setErr('wrap-message', 'err-message', false));
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let ok = true;
+        if (nom.value.trim() === '')   { setErr('wrap-nom',    'err-nom',    true); ok = false; }
+        if (!emailRegex.test(email.value.trim())) { setErr('wrap-email',  'err-email',  true); ok = false; }
+        if (sujet.value.trim() === '') { setErr('wrap-sujet',  'err-sujet',  true); ok = false; }
+        if (msg.value.trim() === '')   { setErr('wrap-message','err-message',true); ok = false; }
+        if (!ok) return;
+
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours…';
+        setTimeout(() => {
+          form.style.display = 'none';
+          success.classList.add('show');
+        }, 800);
+      });
+    })();
+
+    /* ═══════════════════════════════════════════════════════════
+       MODAL ADHÉSION
+       ═══════════════════════════════════════════════════════════ */
+    (function() {
+      const overlay = document.getElementById('modalOverlay');
+      const openBtn = document.getElementById('btnOpenAdhesion');
+      const closeBtn = document.getElementById('modalClose');
+
+      openBtn.addEventListener('click', () => overlay.classList.add('active'));
+      closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('active'); });
+
+      const form   = document.getElementById('adhesionForm');
+      const nom    = document.getElementById('adh-nom');
+      const email  = document.getElementById('adh-email');
+      const tel    = document.getElementById('adh-tel');
+      const type   = document.getElementById('adh-type');
+      const zone   = document.getElementById('adh-zone');
+      const msg    = document.getElementById('adh-msg');
+      const btn    = document.getElementById('btnAdhesionSubmit');
+      const success = document.getElementById('successAdhesion');
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const telRegex   = /^[\d\s\+\-\(\)]{7,20}$/;
+
+      function setErr(wrapId, errId, show) {
+        document.getElementById(wrapId).classList.toggle('error', show);
+        document.getElementById(errId).classList.toggle('show', show);
+      }
+
+      nom.addEventListener('blur', () => setErr('wrap-adh-nom', 'err-adh-nom', nom.value.trim() === ''));
+      nom.addEventListener('input', () => setErr('wrap-adh-nom', 'err-adh-nom', false));
+
+      email.addEventListener('blur', () => setErr('wrap-adh-email', 'err-adh-email', !emailRegex.test(email.value.trim())));
+      email.addEventListener('input', () => setErr('wrap-adh-email', 'err-adh-email', false));
+
+      tel.addEventListener('blur', () => setErr('wrap-adh-tel', 'err-adh-tel', !telRegex.test(tel.value.trim()) || tel.value.trim().length < 7));
+      tel.addEventListener('input', () => setErr('wrap-adh-tel', 'err-adh-tel', false));
+
+      type.addEventListener('blur', () => setErr('wrap-adh-type', 'err-adh-type', type.value === ''));
+      type.addEventListener('change', () => setErr('wrap-adh-type', 'err-adh-type', false));
+
+      zone.addEventListener('blur', () => setErr('wrap-adh-zone', 'err-adh-zone', zone.value === ''));
+      zone.addEventListener('change', () => setErr('wrap-adh-zone', 'err-adh-zone', false));
+
+      msg.addEventListener('blur', () => setErr('wrap-adh-msg', 'err-adh-msg', msg.value.trim() === ''));
+      msg.addEventListener('input', () => setErr('wrap-adh-msg', 'err-adh-msg', false));
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let ok = true;
+        if (nom.value.trim() === '')   { setErr('wrap-adh-nom',   'err-adh-nom',   true); ok = false; }
+        if (!emailRegex.test(email.value.trim())) { setErr('wrap-adh-email', 'err-adh-email', true); ok = false; }
+        if (!telRegex.test(tel.value.trim()) || tel.value.trim().length < 7) { setErr('wrap-adh-tel', 'err-adh-tel', true); ok = false; }
+        if (type.value === '')         { setErr('wrap-adh-type',  'err-adh-type',  true); ok = false; }
+        if (zone.value === '')         { setErr('wrap-adh-zone',  'err-adh-zone',  true); ok = false; }
+        if (msg.value.trim() === '')   { setErr('wrap-adh-msg',   'err-adh-msg',   true); ok = false; }
+        if (!ok) return;
+
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours…';
+        setTimeout(() => {
+          form.style.display = 'none';
+          success.classList.add('show');
+        }, 800);
+      });
+    })();
+  </script>
+
+</body>
+</html>
