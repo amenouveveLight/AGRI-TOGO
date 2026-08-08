@@ -1,196 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AGRI-TOGO — À propos</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="about.js" defer></script>
 </head>
 <body>
-     <header>
+    <header>
         <div>
-            logo
+            AGRI-TOGO
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">A propos</a></li>
+                <li><a href="about.html" class="active">A propos</a></li>
                 <li><a href="produit.html">Nos produits</a></li>
                 <li><a href="actualite.html">actualités</a></li>
-                <li><a href="contat.html">Contact</a></li>
-
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <div><span class="material-symbols-outlined">search</span></div>
-        <div><span class="material-symbols-outlined">dehaze</span></div>    
-        <div><span class="material-symbols-outlined">close</span></div>
-     </header>
-     <main>
+        <div class="header-icons">
+            <span class="material-symbols-outlined menu-open">dehaze</span>
+            <span class="material-symbols-outlined menu-close" >close</span>
+        </div>
+    </header>
+
+    <main>
         <section class="hero2">
             <h1>A propos de nous</h1>
-            <img src="" alt="">
+            <img src="images/premier.jpg" alt="Membres de la coopérative AGRI-TOGO">
         </section>
-        <section>
-            <div>
+
+        <section class="intro-section">
+            <div class="intro">
                 <div id="histoire">
-                     <div>
-                        <div>
-                            <p>AGRI-TOGO est une coopérative agricole engagée dans le développement d'une agriculture durable,       
-                                  solidaire et performante. Elle rassemble des producteurs, des partenaires et des acteurs du secteur   
-                                 agricole afin de mutualiser les ressources, partager les connaissances et améliorer les conditions de production.
-                                 Grâce à un accompagnement technique, des solutions innovantes et une approche collaborative, AGRI-TOGO contribue à
-                                 accroître les rendements, renforcer les revenus des agriculteurs et promouvoir des pratiques agricoles respectueuses 
-                                 de l'environnement au service des communautés.
+                    <div class="intro-row">
+                        <div class="intro-text">
+                            <p>AGRI-TOGO est une coopérative agricole engagée dans le développement d'une agriculture durable,
+                                solidaire et performante. Elle rassemble des producteurs, des partenaires et des acteurs du secteur
+                                agricole afin de mutualiser les ressources, partager les connaissances et améliorer les conditions de production.
+                                Grâce à un accompagnement technique, des solutions innovantes et une approche collaborative, AGRI-TOGO contribue à
+                                accroître les rendements, renforcer les revenus des agriculteurs et promouvoir des pratiques agricoles respectueuses
+                                de l'environnement au service des communautés.
                             </p>
                         </div>
-                        <div>
-                            <img src="images/premier.jpg" alt="">
+                        <div class="intro-image">
+                            <img src="images/premier.jpg" alt="Champs cultivés par les producteurs AGRI-TOGO">
                         </div>
-                     </div>     
+                    </div>
                 </div>
-                <div>
+
+                <div class="valeurs">
                     <h2>Comment fonctionnent AGRI-TOGO</h2>
-                    <div>
-                        <h1>1</h1>
-                         <h3>Excellence</h3>
-                         <p>Nous visons les plus hauts standards de qualité dans nos pratiques,
-                             nos services et nos productions afin de garantir la satisfaction de
-                              nos membres et partenaires.
-                        </p>
-                    </div>
-                    <div>
-                        <h1>2</h1>
-                         <h3>Innovation</h3>
-                         <p>Nous encourageons l'adoption de solutions agricoles modernes, 
-                            de technologies adaptées et de pratiques innovantes pour améliorer
-                             durablement la performance des exploitations.
-                        </p>
-                    </div>
-                    <div>
-                        <h1>3</h1>
-                         <h3>Durabilité</h3>
-                         <p>Nous promouvons une agriculture responsable qui préserve les ressources naturelles,
-                             renforce la résilience des exploitations et contribue au développement des communautés rurales.
-                        </p>
-                    </div>
-                    <div>
-                        <h1>4</h1>
-                         <h3>coopérative</h3>
-                         <p>Nous croyons en la force du collectif. En favorisant la solidarité, le partage des connaissances
-                             et la mise en commun des ressources, nous créons de la valeur durable pour l'ensemble de nos membres.
-                        </p>
+                    <div class="valeurs-grid">
+                        <div class="valeur-item">
+                            <h1>1</h1>
+                            <h3>Excellence</h3>
+                            <p>Nous visons les plus hauts standards de qualité dans nos pratiques,
+                                nos services et nos productions afin de garantir la satisfaction de
+                                nos membres et partenaires.
+                            </p>
+                        </div>
+                        <div class="valeur-item">
+                            <h1>2</h1>
+                            <h3>Innovation</h3>
+                            <p>Nous encourageons l'adoption de solutions agricoles modernes,
+                                de technologies adaptées et de pratiques innovantes pour améliorer
+                                durablement la performance des exploitations.
+                            </p>
+                        </div>
+                        <div class="valeur-item">
+                            <h1>3</h1>
+                            <h3>Durabilité</h3>
+                            <p>Nous promouvons une agriculture responsable qui préserve les ressources naturelles,
+                                renforce la résilience des exploitations et contribue au développement des communautés rurales.
+                            </p>
+                        </div>
+                        <div class="valeur-item">
+                            <h1>4</h1>
+                            <h3>Coopérative</h3>
+                            <p>Nous croyons en la force du collectif. En favorisant la solidarité, le partage des connaissances
+                                et la mise en commun des ressources, nous créons de la valeur durable pour l'ensemble de nos membres.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </section>
-        <section>
+
+        <section class="histoire-section">
             <h2>Notre histoire</h2>
-            <div>
-                <div>
-                <p> 
+            <div class="histoire-row">
+                <div class="histoire-text">
+                    <p>
+                        Chez AGRI-TOGO, nous croyons que l'agriculture est bien plus qu'une activité économique :
+                        elle est un moteur de développement, d'innovation et de transformation sociale.
+                        Créée au Togo, notre coopérative agricole rassemble des producteurs des régions Maritime et des Plateaux autour d'une ambition commune : construire une agriculture plus performante,
+                        durable et créatrice de valeur. En fédérant les compétences, les ressources et les savoir-faire, nous donnons à nos membres les moyens de relever les défis d'aujourd'hui et de saisir les opportunités de demain.
+                        Depuis nos débuts, nous accompagnons les agriculteurs à chaque étape de leur développement en leur offrant un accès à des formations techniques, des intrants de qualité, des solutions innovantes, des équipements adaptés et des débouchés commerciaux. Notre approche repose sur la coopération, l'excellence et l'innovation afin d'améliorer durablement la productivité, les revenus des producteurs et la qualité des productions.
+                        Ancrée dans les territoires, AGRI-TOGO œuvre chaque jour pour promouvoir une agriculture responsable, renforcer les chaînes de valeur agricoles et contribuer au développement économique des communautés rurales. Parce que chaque exploitation est unique, nous mettons l'humain, le partage des connaissances et la performance au cœur de notre action.
+                        Aujourd'hui, AGRI-TOGO poursuit son expansion avec une vision ambitieuse : devenir une référence de la coopération agricole au Togo et en Afrique de l'Ouest, en connectant les producteurs aux marchés, en encourageant l'innovation et en bâtissant une agriculture compétitive, durable et résiliente.
+                        Ensemble, nous cultivons les terres d'aujourd'hui pour récolter les opportunités de demain.
+                    </p>
+                </div>
+                <div class="histoire-image">
+                    <img src="images/histoire.png" alt="Histoire de la coopérative AGRI-TOGO">
+                </div>
+            </div>
+        </section>
 
-                  Chez AGRI-TOGO, nous croyons que l'agriculture est bien plus qu'une activité économique : 
-                   elle est un moteur de développement, d'innovation et de transformation sociale.
-                   Créée au Togo, notre coopérative agricole rassemble des producteurs des régions Maritime et des Plateaux autour d'une ambition commune : construire une agriculture plus performante, 
-                   durable et créatrice de valeur. En fédérant les compétences, les ressources et les savoir-faire, nous donnons à nos membres les moyens de relever les défis d'aujourd'hui et de saisir les opportunités de demain.
-                    Depuis nos débuts, nous accompagnons les agriculteurs à chaque étape de leur développement en leur offrant un accès à des formations techniques, des intrants de qualité, des solutions innovantes, des équipements adaptés et des débouchés commerciaux. Notre approche repose sur la coopération, l'excellence et l'innovation afin d'améliorer durablement la productivité, les revenus des producteurs et la qualité des productions.
-                    Ancrée dans les territoires, AGRI-TOGO œuvre chaque jour pour promouvoir une agriculture responsable, renforcer les chaînes de valeur agricoles et contribuer au développement économique des communautés rurales. Parce que chaque exploitation est unique, nous mettons l'humain, le partage des connaissances et la performance au cœur de notre action.
-                    Aujourd'hui, AGRI-TOGO poursuit son expansion avec une vision ambitieuse : devenir une référence de la coopération agricole au Togo et en Afrique de l'Ouest, en connectant les producteurs aux marchés, en encourageant l'innovation et en bâtissant une agriculture compétitive, durable et résiliente.
-                    Ensemble, nous cultivons les terres d'aujourd'hui pour récolter les opportunités de demain.
-                </p>
-                </div>
-                <div>
-                    <img src="images/histoire.png" alt="">
-                </div>
-            </div>
-        </section>
-        <section>
-            <div>
+        <section class="membres-section">
+            <div class="membres">
                 <h2>Nos producteurs et membres</h2>
-                <div>
-                    <h3>Région Maritimes</h3>
-                    <ul>
-                        <li>22 producteurs</li>
-                        <li>5 association</li>
-                        <li>4 Organisation Non gouvernemental</li>
-                        <li>2 Partennaires</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Région des plateaux</h3>
-                    <ul>
-                        <li>12 producteurs</li>
-                        <li>3 association</li>
-                        <li>4 Organisation Non gouvernemental</li>
-                        <li>5 Partennaires</li>
-                    </ul>
+                <div class="membres-grid">
+                    <div class="membre-card">
+                        <h3>Région Maritimes</h3>
+                        <ul>
+                            <li>22 producteurs</li>
+                            <li>5 associations</li>
+                            <li>4 Organisations Non Gouvernementales</li>
+                            <li>2 Partenaires</li>
+                        </ul>
+                    </div>
+                    <div class="membre-card">
+                        <h3>Région des Plateaux</h3>
+                        <ul>
+                            <li>12 producteurs</li>
+                            <li>3 associations</li>
+                            <li>4 Organisations Non Gouvernementales</li>
+                            <li>5 Partenaires</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
+
         <hr>
-        <section>
+
+        <section class="regions-section">
             <h2>Nos régions d'action</h2>
-            <div>
-                <div>
-                    <button>Maritime</button>
-                    <button>Plateaux</button>
+            <div class="regions">
+                <div class="regions-list-panel">
+
+                    <div class="region-row active" data-region="maritime">
+                        <button class="region-row-head" aria-expanded="true">
+                            <span class="region-pin"><i class="fa-solid fa-location-dot"></i></span>
+                            <span class="region-row-text">
+                                <span class="region-row-title">Maritime</span>
+                                <span class="region-row-count">3 partenaires</span>
+                            </span>
+                            <span class="region-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                        </button>
+                        <ul class="region-partners">
+                            <li tabindex="0" data-city="aneho">
+                                <strong>ONG L'Or Vert</strong> — Aného<br>
+                                ONG locale d'appui au développement rural — Tél : +228 99 91 12 23 33
+                            </li>
+                            <li tabindex="0" data-city="vogan">
+                                <strong>Établissements AGRO-LITTORAL</strong> — Vogan<br>
+                                Produit : gari — Tél : +228 92 11 44 77
+                            </li>
+                            <li tabindex="0" data-city="keve">
+                                <strong>Domaine Agricole de l'Avé</strong> — Kévé<br>
+                                Produit : ananas séché — Tél : +228 91 33 66 99
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="region-row" data-region="plateaux">
+                        <button class="region-row-head" aria-expanded="false">
+                            <span class="region-pin"><i class="fa-solid fa-location-dot"></i></span>
+                            <span class="region-row-text">
+                                <span class="region-row-title">Plateaux</span>
+                                <span class="region-row-count">3 partenaires</span>
+                            </span>
+                            <span class="region-chevron"><i class="fa-solid fa-chevron-right"></i></span>
+                        </button>
+                        <ul class="region-partners">
+                            <li tabindex="0" data-city="kpalime">
+                                <strong>Groupement Féminin « Espoir de Kloto »</strong> — Kpalimé<br>
+                                Produit : gari et tapioca — Tél : +228 70 22 46 08
+                            </li>
+                            <li tabindex="0" data-city="atakpame">
+                                <strong>ONG « Progrès Céréales Plateaux »</strong> — Atakpamé<br>
+                                ONG d'accompagnement technique et financier — Tél : +228 95 66 77 88
+                            </li>
+                            <li tabindex="0" data-city="badou">
+                                <strong>Les Vergers de Tomegbe</strong> — Badou<br>
+                                Producteur : chips de manioc — Tél : +228 99 22 55 88
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
-                <div>
-                <ul>
-                    <li>ONG L'Or Vert ,aneho <br> ONG locale d'appui au développement rural ,tel:228 999 11 22 33</li>
-                    <li>Groupement Féminin "Espoir de Kloto"  , kpalimé <br> produit :gari et tapioca, tel : 228 70 22 46 08 </li>
-                    <li>Établissements AGRO-LITTORAL ,Vogan <br> produit :gari, tel : 92 11 44 77 </li>
-                    <li> Domaine Agricole de l'Avé , keve <br> produit :Ananas séché, tel : 228 91 33 66 99 </li>
-                    <li>  ONG "Progrès Céréales Plateaux", Atakpamé <br> ONG  d'accompagnement technique et financier, tel :  +228 95 66 77 88 </li>
-                    <li>  Les Vergers de Tomegbe,  Badou <br> producteur :Chips de manioc , +228 99 22 55 88 </li>
-                </ul>
+                <div class="regions-map">
+                    <svg viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte simplifiée des régions Maritime et Plateaux du Togo">
+                        <!-- Région Plateaux (nord du périmètre) -->
+                        <path class="region-shape plateaux" data-region="plateaux"
+                              d="M30,390 C55,345 60,290 45,235 C35,195 55,165 100,150 C160,132 250,138 320,160 C355,172 372,190 372,220 L372,345 C340,365 300,352 255,362 C200,375 120,362 70,392 C50,400 38,398 30,390 Z" />
+                        <!-- Région Maritime (bande côtière au sud) -->
+                        <path class="region-shape maritime" data-region="maritime"
+                              d="M30,392 C70,392 200,378 255,364 C300,354 340,367 372,347 C378,385 376,425 360,455 C320,485 220,495 130,490 C85,487 48,470 30,445 C22,428 24,408 30,392 Z" />
+
+                        <text class="region-label" x="200" y="185">Plateaux</text>
+                        <text class="region-label" x="230" y="440">Maritime</text>
+
+                        <!-- Villes — région Plateaux -->
+                        <g class="city-dot" data-city="kpalime" data-region="plateaux" tabindex="-1">
+                            <circle class="pulse-ring" cx="95" cy="330" r="5" />
+                            <circle cx="95" cy="330" r="5" />
+                            <text x="107" y="334">Kpalimé</text>
+                        </g>
+                        <g class="city-dot" data-city="badou" data-region="plateaux" tabindex="-1">
+                            <circle class="pulse-ring" cx="108" cy="245" r="5" />
+                            <circle cx="108" cy="245" r="5" />
+                            <text x="120" y="249">Badou</text>
+                        </g>
+                        <g class="city-dot" data-city="atakpame" data-region="plateaux" tabindex="-1">
+                            <circle class="pulse-ring" cx="235" cy="270" r="5" />
+                            <circle cx="235" cy="270" r="5" />
+                            <text x="247" y="274">Atakpamé</text>
+                        </g>
+
+                        <!-- Villes — région Maritime -->
+                        <g class="city-dot" data-city="keve" data-region="maritime" tabindex="-1">
+                            <circle class="pulse-ring" cx="115" cy="418" r="5" />
+                            <circle cx="115" cy="418" r="5" />
+                            <text x="127" y="422">Kévé</text>
+                        </g>
+                        <g class="city-dot" data-city="vogan" data-region="maritime" tabindex="-1">
+                            <circle class="pulse-ring" cx="255" cy="432" r="5" />
+                            <circle cx="255" cy="432" r="5" />
+                            <text x="267" y="436">Vogan</text>
+                        </g>
+                        <g class="city-dot" data-city="aneho" data-region="maritime" tabindex="-1">
+                            <circle class="pulse-ring" cx="335" cy="458" r="5" />
+                            <circle cx="335" cy="458" r="5" />
+                            <text x="347" y="462">Aného</text>
+                        </g>
+                    </svg>
+                    <p class="map-caption">Carte simplifiée — régions Maritime et Plateaux</p>
+                </div>
             </div>
-            <div>
-                carte
-            </div>
-            </div>
-           
         </section>
-         <hr>
-     </main>
-      <footer>
+
+        <hr>
+    </main>
+
+    <footer>
         <div id="footer-head">
             <div>
                 <div>
-                    logo
+                    AGRI-TOGO
                 </div>
+                <p>
+                    AGRI-TOGO est une coopérative agricole regroupant des producteurs de la région
+                    Maritime et des Plateaux au Togo.
+                </p>
                 <div>
-                  <p>AGRI-TOGO est une coopérative agricole  regroupant des producteurs de la région
-                     Maritime et des Plateaux au Togo
-                  </p>  
-                  <div>
                     <i class="fa-brands fa-facebook"></i>
-                  </div>
-                </div>    
+                </div>
             </div>
-            <div> 
+            <div>
                 <h3>Navigation</h3>
                 <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="index.html">A propos</a></li>
-                <li><a href="index.html">Nos produits</a></li>
-                <li><a href="index.html">actualités</a></li>
-                <li><a href="index.html">contact</a></li> 
-                </ul>               
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">A propos</a></li>
+                    <li><a href="produit.html">Nos produits</a></li>
+                    <li><a href="actualite.html">Actualités</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </div>
             <div>
                 <h3>Contact</h3>
-                <p>Adakpamé lomé-TOGO</p>
-                <P>agritogo@gmail.com</P>
-                <p>tel :70 17 33 46</p>
-
-            </div>   
-            
+                <p>Adakpamé, Lomé - Togo</p>
+                <p>agritogo@gmail.com</p>
+                <p>Tél : 70 17 33 46</p>
+            </div>
         </div>
     </footer>
 
-</body>
-</html>
 </body>
 </html>

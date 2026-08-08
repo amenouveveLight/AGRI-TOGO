@@ -1,4 +1,56 @@
-<script>
+  ══════════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', function () {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots   = document.querySelectorAll('.dot');
+
+  if (!slides.length) return;
+
+  let current = 0;
+  let timer   = null;
+  const DELAY = 5000; // durée d'affichage de chaque slide (ms)
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current] && dots[current].classList.remove('active');
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].classList.add('active');
+    dots[current] && dots[current].classList.add('active');
+  }
+
+  function next() {
+    goTo(current + 1);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    timer = setInterval(next, DELAY);
+  }
+
+  function stopAutoplay() {
+    if (timer) clearInterval(timer);
+  }
+
+  // Clic sur un point = va directement à la slide correspondante
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      const index = parseInt(dot.dataset.index, 10);
+      goTo(index);
+      startAutoplay(); // relance le minuteur après un choix manuel
+    });
+  });
+
+  // Pause au survol, reprise à la sortie
+  const carousel = document.querySelector('.carousel');
+  if (carousel) {
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+  }
+
+  startAutoplay();
+});
+
 (function() {
   // ─── Références DOM ───────────────────────────────────────────
   const form   = document.getElementById('contactForm');
@@ -74,4 +126,6 @@
     }, 800);
   });
 })();
-</script>
+/* ══════════════════════════════════════════════════════════════
+   AGRI-TOGO — Carrousel du hero
+ 

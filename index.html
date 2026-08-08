@@ -1,139 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agri-TOGO</title>
+    <title>AGRI-TOGO — Accueil</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
-        <div>
-            logo
-        </div>
+        <div class="logo"><a href="index.html">AGRI-TOGO</a> </div>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="about.html">A propos</a></li>
                 <li><a href="produit.html">Nos produits</a></li>
                 <li><a href="actualite.html">actualités</a></li>
-                <li><a href="contat.html">Contact</a></li>
-
+                <li><a href="contact2.html">Contact</a></li>
             </ul>
         </nav>
-        <div><span class="material-symbols-outlined">search</span></div>
+        
     </header>
+
     <main>
-        <section>
-           <h1>
-              Cultivons ensemble un avenir agricole durable
-           </h1> 
-           <p>une coopérative agricole togolaise qui accompagne les producteurs grâce à l'innovation, la coopération et des solutions durables pour une agriculture plus performante</p>
-           <div>
-            <button id="cta"><a href="">Decouvrir nos  produit</a></button>
-            <button id="cta"><a href="">Nous-contacter</a></button>   
-           </div>
-        </section>
-        <section id="redirection">
-         <div>
-              <div>
-                <a href="#chiffre">chiffres clés </a> 
+        <section id="hero">
+            <div class="carousel">
+                <div class="carousel-slide active">
+                    <img src="images/for.jpg" alt="Producteurs au champ">
                 </div>
-             <div>
-                <a href="#actualite">Nos actualités</a>
+                <div class="carousel-slide">
+                    <img src="images/lancement.png" alt="Lancement du programme">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/premier.jpg" alt="Première récolte">
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
             </div>
-            <div>
-                <a href="contact.html">contact</a>
-            </div>
-         </div>  
-        </secion>
-        <section id="chiffre">
-            <h2>Chiffres clés</h2>
-           <div>
-             <div>
-                <span class="material-symbols-outlined"> groups </span>
-                <h2>320</h2>
-                <P>Menbres</P>
-            </div>
-             <div>
-                <span class="material-symbols-outlined">explore_nearby</span>
-                <h2>Regions</h2>
-                <P>2 Couvertes</P>
-            </div>
-             <div>
-                <span class="material-symbols-outlined">check_box</span>
-                <h2>9</h2>
-               <a href="#"><P>Produit</P></a> 
-            </div>
-           </div>
         </section>
+
+        <section>
+            <div id="redirection">
+                <div id="redirecton_item">
+                    <a href="#chiffre">Chiffres clés</a>
+                </div>
+                <div>
+                    <a href="#actualite">Nos actualités</a>
+                </div>
+                <div>
+                    <a href="contact2.html">Contact</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="chiffre">
+            <h1>Chiffres clés de la coopération</h1>
+            <div id="cle">
+                <div id="cle_item">
+                    <span class="material-symbols-outlined">groups</span>
+                    <h2>320</h2>
+                    <p>Membres</p>
+                </div>
+                <div id="cle_item1">
+                    <span class="material-symbols-outlined">location_city</span>
+                    <h2>2 Régions</h2>
+                    <p>Couvertes</p>
+                </div>
+                <div id="cle_item2">
+                    <span class="material-symbols-outlined">business_center</span>
+                    <h2>9</h2>
+                    <a href="#"><p>Produits</p></a>
+                </div>
+            </div>
+        </section>
+
         <section id="actualite">
             <h2>Nos actualités</h2>
-            <div>
-                <p>Annonce</p>
-                <img src="images/lancement.png" alt="">
-                <h3>Lancement d'un programme national de distribution de semences améliorées</h3>
-                <time datetime="Date : 5 août 2026">Date : 5 août 2026</time><br>
-                <a href="#">lire plus</a>
+            <div id="actu">
+                <div id="actu1">
+                    <img src="images/histoire.png" alt="Annonce du programme de semences">
+                    <p>ANNONCE</p>
+                    <h3>Lancement d'un programme national de distribution de semences améliorées</h3>
+                    <time datetime="2026-08-05">Date : 5 août 2026</time>
+                    <a href="#">Lire plus</a>
+                </div>
+                <div id="actu1">
+                    <img src="images/for.jpg" alt="Formation de femmes agricultrices">
+                    <p>Formation</p>
+                    <h3>Plus de 300 femmes formées aux techniques agricoles modernes</h3>
+                    <time datetime="2025-05-12">Date : 12 mai 2025</time>
+                    <a href="#">Lire plus</a>
+                </div>
+                <div id="actu1">
+                    <img src="images/un.jfif" alt="Inauguration d'une unité de transformation">
+                    <p>Événement</p>
+                    <h3>Inauguration d'une unité de transformation des produits agricoles</h3>
+                    <time datetime="2025-12-08">Date : 8 décembre 2025</time>
+                    <a href="#">Lire plus</a>
+                </div>
             </div>
-             <div>
-                <img src="images/for.jpg" alt="" width="300px">
-                <p>Formation</p>
-                <h3>Plus de 300 femmes formés aux techniques agricoles modernes</h3>
-                <time datetime="Date : 12 Mai 2025">Date : 12 Mai 2025</time><br>
-                <a href="#">lire plus</a>
-            </div>
-             <div>
-                <img src="images/un.jfif" alt="">
-                <p>Événement</p>
-                <h3>Inauguration d'une unité de transformation des produits agricoles</h3>
-                <time datetime="Date : 8 Decembre 2025">Date : 8 Decembre 2025</time><br>
-                <a href="#">lire plus</a>
-            </div>
-
         </section>
+
         <section id="rejoignez">
             <h2>Besoin d'informations ?</h2>
-            <p>Vous êtes adhérent, vendeur, acheteur, une ONG souhaitant être accompagnée ou un futur partenaire ?.</p>
-            <button><a href="contact.html"> Contactez-nous dès maintenant</a></button>
+            <p>Vous êtes adhérent, vendeur, acheteur, une ONG souhaitant être accompagnée ou un futur partenaire ?</p>
+            <button><a href="contact2.html">Contactez-nous dès maintenant</a></button>
         </section>
     </main>
+
     <hr>
+
     <footer>
         <div id="footer-head">
             <div>
                 <div>
-                    logo
+                    AGRI-TOGO
                 </div>
+                <p>
+                    AGRI-TOGO est une coopérative agricole regroupant des producteurs de la région
+                    Maritime et des Plateaux au Togo.
+                </p>
                 <div>
-                  <p>AGRI-TOGO est une coopérative agricole  regroupant des producteurs de la région
-                     Maritime et des Plateaux au Togo
-                  </p>  
-                  <div>
                     <i class="fa-brands fa-facebook"></i>
-                  </div>
-                </div>    
+                </div>
             </div>
-            <div> 
+            <div>
                 <h3>Navigation</h3>
                 <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="index.html">A propos</a></li>
-                <li><a href="index.html">Nos produits</a></li>
-                <li><a href="index.html">actualités</a></li>
-                <li><a href="index.html">contact</a></li> 
-                </ul>               
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">A propos</a></li>
+                    <li><a href="produit.html">Nos produits</a></li>
+                    <li><a href="actualite.html">Actualités</a></li>
+                    <li><a href="contact2.html">Contact</a></li>
+                </ul>
             </div>
             <div>
                 <h3>Contact</h3>
-                <p>Adakpamé lomé-TOGO</p>
-                <P>agritogo@gmail.com</P>
-                <p>tel :70 17 33 46</p>
-
-            </div>   
-            
+                <p>Adakpamé, Lomé - Togo</p>
+                <p>agritogo@gmail.com</p>
+                <p>Tél : 70 17 33 46</p>
+            </div>
         </div>
     </footer>
 

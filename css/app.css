@@ -1,12 +1,12 @@
 /* ══════════════════════════════════════════════════════════════
-   AGRI-TOGO — feuille de style commune
-   Basée sur l'architecture visuelle de contact.html
+   AGRI-TOGO — Feuille de style commune
    Palette : #1a3c1a (vert foncé) · #4a8c4a (vert moyen)
              #c8e6c9 (vert clair) · #f5f5f0 (fond crème)
    ══════════════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* ─── Reset & Base ───────────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
@@ -20,8 +20,20 @@ body {
   line-height: 1.6;
 }
 
-a { color: inherit; }
-img { display: block; max-width: 100%; }
+a { 
+  color: inherit; 
+}
+
+img { 
+  display: block; 
+  max-width: 100%; 
+}
+
+/* ─── Classes utilitaires pour le responsive ─────────────────── */
+.hide-mobile,
+.photo-secondaire {
+  display: block;
+}
 
 /* ─── Navigation ───────────────────────────────────────────── */
 header {
@@ -34,6 +46,7 @@ header {
   top: 0;
   z-index: 100;
 }
+
 header > div:first-child {
   display: flex;
   align-items: center;
@@ -43,77 +56,104 @@ header > div:first-child {
   font-size: 18px;
   letter-spacing: 0.5px;
 }
+
 header > div:first-child::before {
   content: '\f4d8'; /* fa-seedling */
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
   color: #a5d6a7;
 }
+
+header nav {
+  margin-left: auto;
+}
+
 header nav ul {
   display: flex;
   gap: 28px;
   list-style: none;
 }
+
 header nav ul li a {
   color: #c8e6c9;
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
-  transition: color .2s;
+  transition: color .2s ease;
 }
+
 header nav ul li a:hover {
   color: #fff;
 }
+
 header .material-symbols-outlined {
   color: #c8e6c9;
   cursor: pointer;
-  transition: color .2s;
+  transition: color .2s ease;
 }
+
 header .material-symbols-outlined:hover {
   color: #fff;
 }
 
-/* ─── Hero / Carrousel ─────────────────────────────────────── */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-icons .menu-open,
+.header-icons .menu-close {
+  display: none;
+}
+
+/* ─── Hero / Accueil ───────────────────────────────────────── */
 #hero {
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
   flex-direction: column;
-  background: linear-gradient(135deg, #2e5c2e 0%, #4a8c4a 100%);
 }
+
 #hero h1 {
-  text-align: center;
   font-size: 2rem;
-  padding: 80px 30px 0 0;
   line-height: 1.4;
   color: #fff;
+  margin-bottom: 12px;
 }
+
 #hero p {
-  text-align: center;
-  font-style: normal;
   font-size: 1rem;
   line-height: 1.6;
-  padding-bottom: 25px;
+  margin-bottom: 30px;
   color: #e8f5e9;
 }
 
 #action {
   display: flex;
-  padding-bottom: 120px;
-  margin-left: 490px;
-  gap: 30px;
+  justify-content: center;
+  gap: 16px;
 }
+
 #cta {
-  width: 190px;
-  padding: 1rem 0.6rem;
+  min-width: 180px;
+  padding: 0.8rem 1.4rem;
   border: none;
   border-radius: 10px;
   background: #fff;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
 }
+
+#cta:hover {
+  transform: translateY(-2px);
+  background: #e8f5e9;
+}
+
 #cta a {
   text-decoration: none;
   color: #4a8c4a;
-  background-color: transparent;
   font-weight: 600;
 }
 
@@ -133,16 +173,19 @@ header .material-symbols-outlined:hover {
   position: relative;
   z-index: 5;
 }
+
 #redirection > div {
   padding: 6px 18px;
 }
+
 #redirection a {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 600;
   color: #1a3c1a;
-  transition: color .2s;
+  transition: color .2s ease;
 }
+
 #redirection a:hover {
   color: #4a8c4a;
 }
@@ -169,9 +212,8 @@ header .material-symbols-outlined:hover {
   max-width: 1100px;
   margin: 0 auto;
 }
-#cle_item,
-#cle_item1,
-#cle_item2 {
+
+#cle > div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -181,37 +223,33 @@ header .material-symbols-outlined:hover {
   min-width: 220px;
   flex: 1;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
-  transition: transform .2s;
+  transition: transform .2s ease;
 }
-#cle_item:hover,
-#cle_item1:hover,
-#cle_item2:hover {
+
+#cle > div:hover {
   transform: translateY(-3px);
 }
-#cle_item span,
-#cle_item1 span {
+
+#cle span {
   color: #4a8c4a;
   font-size: 3rem;
   line-height: 1;
   margin-bottom: 8px;
 }
-#cle_item2 span {
-  color: #4a8c4a;
-  font-size: 2.6rem;
-  line-height: 1;
-  margin-bottom: 8px;
-}
+
 #cle h2 {
   font-size: 1.6rem;
   font-weight: 700;
   color: #1a3c1a;
   padding-bottom: 6px;
 }
+
 #cle p {
   font-size: 13px;
   color: #666;
 }
-#cle_item2 a {
+
+#cle a {
   color: #4a8c4a;
   font-size: 1rem;
   text-decoration: none;
@@ -237,6 +275,7 @@ header .material-symbols-outlined:hover {
   margin-bottom: 60px;
   padding: 0 24px;
 }
+
 #actu1 {
   display: flex;
   flex-direction: column;
@@ -245,17 +284,20 @@ header .material-symbols-outlined:hover {
   background: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
   overflow: hidden;
-  transition: transform .2s, box-shadow .2s;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
+
 #actu1:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, .1);
 }
+
 #actu1 img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
+
 #actu1 p {
   padding: 18px 18px 0;
   color: #4a8c4a;
@@ -264,6 +306,7 @@ header .material-symbols-outlined:hover {
   text-transform: uppercase;
   letter-spacing: .5px;
 }
+
 #actu1 h3 {
   padding: 8px 18px 0;
   color: #1a3c1a;
@@ -271,12 +314,14 @@ header .material-symbols-outlined:hover {
   font-weight: 700;
   line-height: 1.4;
 }
+
 #actu1 time {
   display: block;
   padding: 10px 18px 0;
   color: #888;
   font-size: 12px;
 }
+
 #actu1 a {
   padding: 12px 18px 18px;
   color: #1a3c1a;
@@ -284,6 +329,7 @@ header .material-symbols-outlined:hover {
   font-weight: 700;
   font-size: 13px;
 }
+
 #actu1 a:hover {
   color: #2e5c2e;
 }
@@ -300,12 +346,14 @@ header .material-symbols-outlined:hover {
   background: #1a3c1a;
   box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
 }
+
 #rejoignez h2 {
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
 }
+
 #rejoignez p {
   max-width: 480px;
   text-align: center;
@@ -314,6 +362,7 @@ header .material-symbols-outlined:hover {
   color: #c8e6c9;
   margin-bottom: 24px;
 }
+
 #rejoignez button {
   display: inline-flex;
   align-items: center;
@@ -327,12 +376,14 @@ header .material-symbols-outlined:hover {
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  transition: background .2s, transform .2s;
+  transition: background .2s ease, transform .2s ease;
 }
+
 #rejoignez button:hover {
   background: #c8e6c9;
   transform: translateY(-2px);
 }
+
 #rejoignez button a {
   text-decoration: none;
   color: inherit;
@@ -382,7 +433,7 @@ header .material-symbols-outlined:hover {
   border-radius: 50%;
   background: rgba(255, 255, 255, .5);
   cursor: pointer;
-  transition: background .2s;
+  transition: background .2s ease;
   border: none;
 }
 
@@ -402,6 +453,7 @@ footer {
   padding: 48px 32px 24px;
   font-size: 13px;
 }
+
 #footer-head {
   max-width: 1100px;
   margin: 0 auto;
@@ -409,6 +461,7 @@ footer {
   grid-template-columns: 2fr 1fr 1fr;
   gap: 32px;
 }
+
 #footer-head > div > div:first-child {
   display: flex;
   align-items: center;
@@ -418,89 +471,67 @@ footer {
   font-size: 18px;
   margin-bottom: 14px;
 }
+
 #footer-head > div:first-child > div:first-child::before {
   content: '\f4d8';
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
   color: #a5d6a7;
 }
+
 #footer-head p {
   color: #c8e6c9;
   line-height: 1.7;
   margin-bottom: 14px;
 }
+
 #footer-head i {
   color: #a5d6a7;
   font-size: 18px;
-  transition: color .2s;
+  transition: color .2s ease;
 }
+
 #footer-head i:hover {
   color: #fff;
 }
+
 footer h3 {
   color: #fff;
   font-size: 14px;
   font-weight: 700;
   margin-bottom: 14px;
 }
+
 footer ul {
   list-style: none;
 }
+
 footer ul li {
   margin-bottom: 8px;
 }
+
 footer ul li a {
   color: #c8e6c9;
   text-decoration: none;
   font-size: 13px;
-  transition: color .2s;
+  transition: color .2s ease;
 }
+
 footer ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
+
 footer p {
   margin-bottom: 6px;
   color: #c8e6c9;
 }
 
-/* ─── Responsive ───────────────────────────────────────────── */
-@media (max-width: 900px) {
-  #redirection {
-    flex-direction: column;
-    gap: 10px;
-    max-width: 90%;
-  }
-  #cle, #actu {
-    flex-direction: column;
-    align-items: center;
-  }
-  #rejoignez {
-    margin: 40px 16px 60px;
-  }
-  #footer-head {
-    grid-template-columns: 1fr;
-  }
-  header nav ul {
-    display: none;
-  }
-}
-
 /* ══════════════════════════════════════════════════════════════
-   PAGE À PROPOS (about.html)
+   PAGE À PROPOS (about.html) & COMPOSANTS
    ══════════════════════════════════════════════════════════════ */
 
-/* ─── Icônes du header (menu mobile / recherche) ──────────────── */
-.header-icons {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.header-icons .menu-close {
-  display: none;
-}
-
-/* ─── Hero secondaire (pages intérieures) ──────────────────────── */
+/* ─── Hero secondaire ───────────────────────────────────────── */
 .hero2 {
   position: relative;
   height: 280px;
@@ -510,6 +541,7 @@ footer p {
   background: linear-gradient(135deg, #2e5c2e 0%, #4a8c4a 100%);
   overflow: hidden;
 }
+
 .hero2 h1 {
   position: relative;
   z-index: 2;
@@ -518,6 +550,7 @@ footer p {
   font-weight: 700;
   text-align: center;
 }
+
 .hero2 img {
   position: absolute;
   inset: 0;
@@ -528,28 +561,33 @@ footer p {
   z-index: 1;
 }
 
-/* ─── Introduction : texte + image ──────────────────────────────── */
+/* ─── Introduction : Texte + Image ──────────────────────────── */
 .intro-section {
   max-width: 1100px;
   margin: 0 auto;
   padding: 60px 24px 20px;
 }
+
 .intro-row {
   display: flex;
   align-items: center;
   gap: 40px;
 }
+
 .intro-text {
   flex: 1;
 }
+
 .intro-text p {
   color: #444;
   font-size: 15px;
   line-height: 1.8;
 }
+
 .intro-image {
   flex: 1;
 }
+
 .intro-image img {
   width: 100%;
   height: 320px;
@@ -558,10 +596,11 @@ footer p {
   box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
 }
 
-/* ─── Nos valeurs (cartes numérotées) ───────────────────────────── */
+/* ─── Valeurs ───────────────────────────────────────────────── */
 .valeurs {
   margin-top: 70px;
 }
+
 .valeurs h2 {
   text-align: center;
   font-size: 2rem;
@@ -569,22 +608,26 @@ footer p {
   color: #1a3c1a;
   margin-bottom: 40px;
 }
+
 .valeurs-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
+
 .valeur-item {
   background: #fff;
   border-radius: 12px;
   padding: 28px 22px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
-  transition: transform .2s, box-shadow .2s;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
+
 .valeur-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, .1);
 }
+
 .valeur-item h1 {
   font-size: 1.8rem;
   font-weight: 700;
@@ -592,24 +635,27 @@ footer p {
   -webkit-text-stroke: 1.5px #4a8c4a;
   margin-bottom: 10px;
 }
+
 .valeur-item h3 {
   font-size: 15px;
   font-weight: 700;
   color: #1a3c1a;
   margin-bottom: 8px;
 }
+
 .valeur-item p {
   font-size: 13px;
   color: #666;
   line-height: 1.7;
 }
 
-/* ─── Notre histoire ─────────────────────────────────────────────── */
+/* ─── Notre histoire ─────────────────────────────────────────── */
 .histoire-section {
   max-width: 1100px;
   margin: 0 auto;
   padding: 70px 24px;
 }
+
 .histoire-section h2 {
   text-align: center;
   font-size: 2rem;
@@ -617,23 +663,28 @@ footer p {
   color: #1a3c1a;
   margin-bottom: 40px;
 }
+
 .histoire-row {
   display: flex;
   align-items: center;
   gap: 40px;
 }
+
 .histoire-text {
   flex: 1.2;
 }
+
 .histoire-text p {
   color: #444;
   font-size: 14px;
   line-height: 1.9;
   text-align: justify;
 }
+
 .histoire-image {
   flex: 1;
 }
+
 .histoire-image img {
   width: 100%;
   height: 420px;
@@ -642,15 +693,17 @@ footer p {
   box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
 }
 
-/* ─── Nos producteurs et membres ───────────────────────────────────── */
+/* ─── Membres ───────────────────────────────────────────────── */
 .membres-section {
   background: #fff;
   padding: 70px 24px;
 }
+
 .membres {
   max-width: 1100px;
   margin: 0 auto;
 }
+
 .membres h2 {
   text-align: center;
   font-size: 2rem;
@@ -658,35 +711,42 @@ footer p {
   color: #1a3c1a;
   margin-bottom: 40px;
 }
+
 .membres-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
+
 .membre-card {
   background: #f5f5f0;
   border-radius: 14px;
   padding: 32px;
- 
+  border-left: 4px solid #4a8c4a;
 }
+
 .membre-card h3 {
   color: #1a3c1a;
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 16px;
 }
+
 .membre-card ul {
   list-style: none;
 }
+
 .membre-card li {
   color: #444;
   font-size: 14px;
   padding: 8px 0;
   border-bottom: 1px solid #e0e0d8;
 }
+
 .membre-card li:last-child {
   border-bottom: none;
 }
+
 .membre-card li::before {
   content: '\f4d8';
   font-family: 'Font Awesome 6 Free';
@@ -696,12 +756,13 @@ footer p {
   font-size: 12px;
 }
 
-/* ─── Nos régions d'action ──────────────────────────────────────────── */
+/* ─── Régions d'action ──────────────────────────────────────── */
 .regions-section {
   max-width: 1100px;
   margin: 0 auto;
   padding: 70px 24px;
 }
+
 .regions-section h2 {
   text-align: center;
   font-size: 2rem;
@@ -709,104 +770,133 @@ footer p {
   color: #1a3c1a;
   margin-bottom: 40px;
 }
+
 .regions {
   display: flex;
   gap: 32px;
   align-items: flex-start;
 }
-.regions-content {
-  flex: 1.3;
-}
-.regions-tabs {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-.tab-btn {
-  padding: 10px 24px;
-  border: 1.5px solid #4a8c4a;
-  border-radius: 10px;
-  background: #fff;
-  color: #4a8c4a;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background .2s, color .2s;
-}
-.tab-btn:hover {
-  background: #e8f5e9;
-}
-.tab-btn.active {
-  background: #1a3c1a;
-  border-color: #1a3c1a;
-  color: #fff;
-}
-.regions-list {
-  list-style: none;
+
+/* Accordéon des régions */
+.regions-list-panel {
+  flex: 1.1;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
-.regions-list li {
+
+.region-row {
   background: #fff;
   border-radius: 12px;
-  padding: 16px 20px;
-  font-size: 13px;
-  color: #555;
-  line-height: 1.7;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+  overflow: hidden;
 }
-.regions-list li strong {
-  color: #1a3c1a;
-  font-size: 14px;
+
+.region-row-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background .2s ease;
 }
-.regions-map {
-  flex: 1;
-  min-height: 380px;
-  background: #c8e6c9;
-  border-radius: 14px;
+
+.region-row-head:hover {
+  background: #f5f5f0;
+}
+
+.region-row.active .region-row-head {
+  background: #f0f7f0;
+}
+
+.region-pin {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1a3c1a;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #e8f5e9;
+  color: #4a8c4a;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: background .2s ease, color .2s ease;
+}
+
+.region-row.active .region-pin {
+  background: #1a3c1a;
+  color: #fff;
+}
+
+.region-row-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.region-row-title {
+  font-size: 15px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: sticky;
-  top: 90px;
+  color: #1a3c1a;
 }
 
-/* ─── Responsive : page à propos ───────────────────────────────────── */
-@media (max-width: 900px) {
-  .intro-row,
-  .histoire-row,
-  .regions {
-    flex-direction: column;
-  }
-  .valeurs-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .membres-grid {
-    grid-template-columns: 1fr;
-  }
-  .regions-map {
-    position: static;
-    width: 100%;
-  }
-  .hero2 h1 {
-    font-size: 1.8rem;
-  }
-}
-@media (max-width: 560px) {
-  .valeurs-grid {
-    grid-template-columns: 1fr;
-  }
+.region-row-count {
+  font-size: 12px;
+  color: #888;
 }
 
-/* ─── Carte interactive (Maritime + Plateaux uniquement) ───────── */
+.region-chevron {
+  color: #999;
+  font-size: 13px;
+  transition: transform .25s ease;
+}
+
+.region-row.active .region-chevron {
+  transform: rotate(90deg);
+  color: #4a8c4a;
+}
+
+.region-partners {
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
+}
+
+.region-row.active .region-partners {
+  max-height: 600px;
+}
+
+.region-partners li {
+  padding: 14px 18px 14px 66px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.7;
+  border-top: 1px solid #eeeee6;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.region-partners li:hover,
+.region-partners li:focus {
+  background: #f5f5f0;
+  outline: none;
+}
+
+.region-partners li strong {
+  color: #1a3c1a;
+  font-size: 13.5px;
+}
+
+/* ─── Carte SVG (droite) ───────────────────────────────── */
 .regions-map {
   flex: 1;
-  min-height: 380px;
+  min-height: 420px;
   background: #f5f5f0;
   border-radius: 14px;
   padding: 20px;
@@ -818,11 +908,14 @@ footer p {
   top: 90px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
 }
+
 .regions-map svg {
   width: 100%;
   max-width: 320px;
   height: auto;
+  overflow: visible;
 }
+
 .map-caption {
   margin-top: 12px;
   font-size: 11px;
@@ -830,84 +923,242 @@ footer p {
   text-align: center;
 }
 
-/* Formes des régions */
 .region-shape {
-  stroke: #fff;
-  stroke-width: 2;
-  transition: opacity .3s ease, fill .3s ease;
+  stroke: #f5f5f0;
+  stroke-width: 3;
+  transition: fill .25s ease, opacity .25s ease;
+  cursor: pointer;
 }
+
 .region-shape.maritime {
-  fill: #a5d6a7;
+  fill: #4a8c4a;
 }
+
 .region-shape.plateaux {
-  fill: #d7ecd8;
+  fill: #1a3c1a;
 }
+
 .region-shape.dimmed {
-  opacity: .35;
+  fill: #dcdcd2;
 }
+
+.region-shape.hovered {
+  fill: #2e5c2e;
+}
+
 .region-label {
   font-size: 11px;
   font-weight: 700;
   fill: #1a3c1a;
   text-transform: uppercase;
   letter-spacing: 1px;
-  opacity: .55;
+  opacity: .9;
   pointer-events: none;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-linejoin: round;
 }
 
-/* Points de ville */
+/* Points de ville SVG */
+.city-dot { 
+  cursor: pointer; 
+}
+
 .city-dot circle:not(.pulse-ring) {
   fill: #fff;
-  stroke: #4a8c4a;
+  stroke: #1a3c1a;
   stroke-width: 2;
   transition: r .2s ease, fill .2s ease, stroke .2s ease;
 }
+
 .city-dot text {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   fill: #1a3c1a;
   opacity: 0;
   transition: opacity .2s ease;
   pointer-events: none;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 3px;
 }
+
 .city-dot .pulse-ring {
   fill: none;
-  stroke: #4a8c4a;
+  stroke: #fff;
   stroke-width: 2;
   opacity: 0;
 }
-.city-dot { cursor: pointer; }
 
 .city-dot.active circle:not(.pulse-ring) {
-  fill: #1a3c1a;
-  stroke: #1a3c1a;
+  fill: #fff;
+  stroke: #fff;
   r: 7;
 }
+
 .city-dot.active text {
   opacity: 1;
 }
+
 .city-dot.active .pulse-ring {
   opacity: 1;
   animation: city-pulse 1.2s ease-out infinite;
 }
+
 .city-dot.inactive-region {
-  opacity: .25;
+  opacity: .3;
 }
 
 @keyframes city-pulse {
-  0%   { r: 5; stroke-opacity: .7; }
+  0%   { r: 5; stroke-opacity: .8; }
   100% { r: 16; stroke-opacity: 0; }
 }
 
-/* Lien visuel : survol d'un élément de la liste */
-.regions-list li[data-city] {
-  cursor: pointer;
-  transition: background .2s ease, box-shadow .2s ease, border-color .2s ease;
-  border: 1.5px solid transparent;
+/* ─── Media Queries Globaux ─────────────────────────────────── */
+
+/* Tablettes (769px à 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  header {
+    padding: 12px 20px;
+  }
+  header nav ul {
+    gap: 16px;
+  }
+  header nav ul li a {
+    font-size: 12px;
+  }
+  header > div:first-child {
+    font-size: 16px;
+  }
 }
-.regions-list li[data-city]:hover,
-.regions-list li[data-city]:focus {
-  background: #f0f7f0;
-  border-color: #a5d6a7;
-  outline: none;
+
+/* Mobiles (≤ 900px / Breakpoint responsive global) */
+@media (max-width: 900px) {
+  #cle, #actu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #rejoignez {
+    margin: 40px 16px 60px;
+  }
+
+  #footer-head {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-row,
+  .histoire-row,
+  .regions {
+    flex-direction: column;
+  }
+
+  .valeurs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .membres-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .regions-map {
+    position: static;
+    width: 100%;
+  }
+
+  .hero2 h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobiles (≤ 768px) — RÈGLES DE MASQUAGE ET MENU MOBILE */
+@media (max-width: 768px) {
+
+  /* 1. Cache la section Redirection sur mobile */
+  #redirection,
+  .hide-mobile {
+    display: none !important;
+  }
+
+  /* 2. Cache les images secondaires sur mobile */
+  .intro-image,
+  .histoire-image,
+  .photo-secondaire {
+    display: none !important;
+  }
+
+  /* 3. Ajustement de la hauteur du hero sur mobile */
+  .carousel,
+  .hero2 {
+    height: 220px;
+  }
+
+  /* 4. Menu mobile */
+  header {
+    padding: 12px 20px;
+  }
+
+  header nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1a3c1a;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .15);
+    z-index: 99;
+  }
+
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0;
+  }
+
+  header nav ul li {
+    width: 100%;
+  }
+
+  header nav ul li a {
+    display: block;
+    padding: 14px 32px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+  }
+
+  header.nav-open nav {
+    max-height: 400px;
+  }
+
+  .header-icons .menu-open {
+    display: inline-flex;
+  }
+
+  header.nav-open .header-icons .menu-open {
+    display: none;
+  }
+
+  header.nav-open .header-icons .menu-close {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 560px) {
+  .valeurs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Petit mobile (≤ 400px) */
+@media (max-width: 400px) {
+  header > div:first-child {
+    font-size: 16px;
+  }
+  header {
+    padding: 10px 16px;
+  }
 }
