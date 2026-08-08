@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   const header     = document.querySelector('header');
   const openBtn    = document.querySelector('.header-icons .menu-open');
@@ -152,13 +153,14 @@ document.addEventListener('DOMContentLoaded', function () {
   startAutoplay();
 });
 
+
 (function() {
   // ─── Références DOM ───────────────────────────────────────────
   const form   = document.getElementById('contactForm');
   const email  = document.getElementById('email');
   const tel    = document.getElementById('tel');
   const notes  = document.getElementById('notes');
-  const submitBtn = document.getElementById('submitBtn');
+  const submitBtn = document.getElementById('submitBtn')
 
   // ─── Regex ────────────────────────────────────────────────────
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -228,6 +230,3 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 })();
 
-
-
- 
