@@ -6,8 +6,8 @@
     <title>AGRI-TOGO — À propos</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="css/app.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
     <header>
@@ -251,38 +251,63 @@
         <hr>
     </main>
 
-    <footer>
-        <div id="footer-head">
-            <div>
-                <div>
-                    AGRI-TOGO
-                </div>
-                <p>
-                    AGRI-TOGO est une coopérative agricole regroupant des producteurs de la région
-                    Maritime et des Plateaux au Togo.
-                </p>
-                <div>
-                    <i class="fa-brands fa-facebook"></i>
-                </div>
-            </div>
-            <div>
-                <h3>Navigation</h3>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">A propos</a></li>
-                    <li><a href="produit.html">Nos produits</a></li>
-                    <li><a href="actualite.html">Actualités</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Contact</h3>
-                <p>Adakpamé, Lomé - Togo</p>
-                <p>agritogo@gmail.com</p>
-                <p>Tél : 70 17 33 46</p>
-            </div>
+  <footer class="footer-main">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo"><i class="fa-solid fa-seedling"></i> AGRI-TOGO</div>
+        <p class="footer-desc">Coopérative agricole regroupant les producteurs des régions Maritime et des Plateaux au Togo. Ensemble, cultivons l'avenir.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
-    </footer>
-
-</body>
-</html>
+      </div>
+      <div class="footer-col">
+        <h4>Liens rapides</h4>
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="produits.html">Nos produits</a>
+        <a href="actualite1.html">Actualités</a>
+        <a href="contact2.html">Contact</a>
+        <a href="contact2.html">Adhérer à la coopérative</a>
+      </div>
+      <div class="footer-col">
+        <h4>Nous contacter</h4>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>123 Rue des Agriculteurs<br>Quartier Adawlato, Lomé — Togo</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+228 92 88 38 74<br>+228 70 98 76 54</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>contact@agri-togo.tg<br>camaraguy10@gmail.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-clock"></i>
+          <span>Lun – Ven : 8h00 – 17h00<br>Sam : 8h00 – 12h00</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Recevez nos actualités, offres de formation et événements directement dans votre boîte mail.</p>
+        <form class="footer-newsletter" id="newsletterForm" onsubmit="return false;">
+          <input type="email" placeholder="Votre email" required>
+          <button type="submit" name="newsletterForm"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p style="margin-top:14px; font-size:12px; color:#7da87d;"><i class="fa-solid fa-shield-halved" style="margin-right:4px;"></i> Nous respectons votre vie privée.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AGRI-TOGO — Coopérative agricole du Togo. Tous droits réservés.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Plan du site</a>
+      </div>
+    </div>
+  </footer>
