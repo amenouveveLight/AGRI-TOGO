@@ -6,7 +6,7 @@
   <title>Contact — AGRI-TOGO</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/contact.css">
-  <script src="js/contact.js"></script>
+  <script src="js/contact.js" defer></script>
  
 <base target="_blank">
 </head>
@@ -81,6 +81,7 @@
             </div>
             <div class="input-wrapper">
               <input type="text" id="nom" placeholder="Nom de famille">
+              <div class="error-msg" id="err-nom"></div>
             </div>
           </div>
         </div>
@@ -93,16 +94,6 @@
             <input type="email" id="email" placeholder="exemple@email.com">
           </div>
           <div class="error-msg" id="err-email">Veuillez saisir une adresse email valide.</div>
-        </div>
-
-
-        <div class="form-group">
-          <label class="form-label">4. Sujet<span class="req">*</span></label>
-          <div class="input-wrapper" id="wrap-tel">
-            <i class="fa-solid fa-talk icon"></i>
-            <input type="texte" id="tel" placeholder="sujet">
-          </div>
-          <div class="error-msg" id="err-tel">Veuillez saisir le sujet </div>
         </div>
 
         <div class="form-group">
