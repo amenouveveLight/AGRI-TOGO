@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Produits — AGRI-TOGO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/produit.css">
+  <script src="js/produit.js"defer></script>
+<base target="_blank">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="logo"><i class="fa-solid fa-seedling"></i> AGRI-TOGO</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="produit.html" class="active">Nos produits</a></li>
+      <li><a href="actualite1.html">Actualités</a></li>
+      <li><a href="contact2.html">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+
+  <!-- Hero avec image bannière -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+      <h1>Nos Produits</h1>
+      <p>Maïs, manioc, ananas et produits transformés de la coopérative AGRI-TOGO</p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Carrousel Produits Populaires -->
+    <h2 class="section-title"><i class="fa-solid fa-fire"></i> Produits Populaires</h2>
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide">
+          <div class="carousel-img">
+            <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=600&h=400&fit=crop" alt="Maïs bio">
+          </div>
+          <div class="carousel-text">
+            <span class="badge">Populaire</span>
+            <h3>Maïs Bio Premium</h3>
+            <p>Notre maïs biologique cultivé dans les régions Maritime et des Plateaux est reconnu pour sa qualité exceptionnelle. Grains dorés, récolte manuelle et séchage naturel au soleil.</p>
+            <div class="price">35 000 FCFA / tonne</div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-img">
+            <img src="images/anana.jpg" alt="Ananas">
+          </div>
+          <div class="carousel-text">
+            <span class="badge">Nouveau</span>
+            <h3>Ananas Pain de Sucre</h3>
+            <p>L'ananas Pain de Sucre de nos champs est juteux, sucré et parfumé. Récolté à maturité optimale pour garantir une saveur incomparable aux consommateurs.</p>
+            <div class="price">500 FCFA / unité</div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-img">
+            <img src="images/manioc.jpg" alt="Manioc">
+          </div>
+          <div class="carousel-text">
+            <span class="badge">Best-seller</span>
+            <h3>Manioc Frais</h3>
+            <p>Racines de manioc frais, fermes et blanches, cultivées sans pesticides. Idéal pour la préparation du foufou, du tapioca et de la farine de manioc.</p>
+            <div class="price">200 FCFA / kg</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-nav prev" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="carousel-nav next" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="carouselDots">
+      <button class="carousel-dot active" data-index="0"></button>
+      <button class="carousel-dot" data-index="1"></button>
+      <button class="carousel-dot" data-index="2"></button>
+    </div>
+
+    <!-- Filtres -->
+    <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Tous nos produits</h2>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="mais">Maïs</button>
+      <button class="filter-btn" data-filter="manioc">Manioc</button>
+      <button class="filter-btn" data-filter="ananas">Ananas</button>
+      <button class="filter-btn" data-filter="transformes">Produits transformés</button>
+    </div>
+
+    <!-- Grille de produits -->
+    <div class="products-grid" id="productsGrid">
+      <div class="product-card" data-category="mais">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=400&h=300&fit=crop" alt="Maïs en épis">
+          <span class="product-badge">Maïs</span>
+        </div>
+        <div class="product-body">
+          <h3>Maïs en Épis</h3>
+          <p>Épis de maïs frais, récoltés à la main. Parfaits pour la cuisson au four ou au barbecue. Vendus par botte de 10 épis.</p>
+          <div class="product-footer">
+            <span class="product-price">1 500 FCFA</span>
+            <button class="product-btn">Commander</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="manioc">
+        <div class="product-img">
+          <img src="images/manioc.jpg" alt="Manioc frais">
+          <span class="product-badge">Manioc</span>
+        </div>
+        <div class="product-body">
+          <h3>Manioc Frais</h3>
+          <p>Racines de manioc de qualité supérieure, cultivées dans la région des Plateaux. Texture ferme et saveur authentique.</p>
+          <div class="product-footer">
+            <span class="product-price">200 FCFA / kg</span>
+            <button class="product-btn">Commander</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="ananas">
+        <div class="product-img">
+          <img src="../images/ananas.jpg" alt="Ananas frais">
+          <span class="product-badge">Ananas</span>
+        </div>
+        <div class="product-body">
+          <h3>Ananas Pain de Sucre</h3>
+          <p>Ananas juteux et sucré, récolté à maturité dans nos champs de la région Maritime. Goût intense et chair tendre.</p>
+          <div class="product-footer">
+            <span class="product-price">500 FCFA</span>
+            <button class="product-btn">Commander</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="transformes">
+        <div class="product-img">
+          <img src="images/farine_mais.jfif" alt="Farine de maïs">
+          <span class="product-badge">Transformé</span>
+        </div>
+        <div class="product-body">
+          <h3>Farine de Maïs</h3>
+          <p>Farine de maïs pure, moulue sur pierre traditionnelle. Sans additifs, idéale pour le porridge, le pain et les crêpes.</p>
+          <div class="product-footer">
+            <span class="product-price">800 FCFA / kg</span>
+            <button class="product-btn">Commander</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="transformes">
+        <div class="product-img">
+          <img src="images/jus.jpg" alt="Jus d'ananas">
+          <span class="product-badge">Transformé</span>
+        </div>
+        <div class="product-body">
+          <h3>Jus d'Ananas Naturel</h3>
+          <p>Jus 100% naturel pressé à froid, sans sucre ajouté. Bouteille de 50cl. Frais, vitaminé et délicieusement sucré.</p>
+          <div class="product-footer">
+            <span class="product-price">1 200 FCFA</span>
+            <button class="product-btn">Commander</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="transformes">
+        <div class="product-img">
+          <img src="images/fmanioc.webp" alt="Gari">
+          <span class="product-badge">Transformé</span>
+        </div>
+        <div class="product-body">
+          <h3>Gari Premium</h3>
+          <p>Gari de manioc fermenté et grillé, de texture fine et goût acidulé. Parfait pour l'ebba, le placali ou en accompagnement.</p>
+          <div class="product-footer">
+            <span class="product-price">600 FCFA / kg</span>
+            <button class="product-btn">Commander</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer professionnel -->
+  <footer class="footer-main">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo"><i class="fa-solid fa-seedling"></i> AGRI-TOGO</div>
+        <p class="footer-desc">Coopérative agricole regroupant les producteurs des régions Maritime et des Plateaux au Togo. Ensemble, cultivons l'avenir.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Liens rapides</h4>
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="produits.html">Nos produits</a>
+        <a href="actualite1.html">Actualités</a>
+        <a href="contact2.html">Contact</a>
+        <a href="contact2.html">Adhérer à la coopérative</a>
+      </div>
+      <div class="footer-col">
+        <h4>Nous contacter</h4>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>123 Rue des Agriculteurs<br>Quartier Adawlato, Lomé — Togo</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+228 92 88 38 74<br>+228 70 98 76 54</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>contact@agri-togo.tg<br>camaraguy10@gmail.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-clock"></i>
+          <span>Lun – Ven : 8h00 – 17h00<br>Sam : 8h00 – 12h00</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Recevez nos actualités, offres de formation et événements directement dans votre boîte mail.</p>
+        <form class="footer-newsletter" id="newsletterForm" onsubmit="return false;">
+          <input type="email" placeholder="Votre email" required>
+          <button type="submit" id="news"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p style="margin-top:14px; font-size:12px; color:#7da87d;"><i class="fa-solid fa-shield-halved" style="margin-right:4px;"></i> Nous respectons votre vie privée.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AGRI-TOGO — Coopérative agricole du Togo. Tous droits réservés.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Plan du site</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

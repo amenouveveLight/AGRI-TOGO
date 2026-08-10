@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — AGRI-TOGO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <script src="js/contact.js" defer></script>
+ 
+<base target="_blank">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="logo"><i class="fa-solid fa-seedling"></i> AGRI-TOGO</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="produit.html">Nos produits</a></li>
+      <li><a href="actualite1.html">Actualités</a></li>
+      <li><a href="contact2.html" class="active">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+
+  <!-- Hero avec image bannière -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+      <h1>Contact</h1>
+      <p>Écrivez-nous ou rejoignez la coopérative AGRI-TOGO</p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Bouton adhésion -->
+    <button class="btn-adhesion" id="btnOpenAdhesion">
+      <i class="fa-solid fa-user-plus"></i> Adhérer à la coopérative
+    </button>
+
+    <!-- Coordonnées -->
+    <h2 class="section-title"><i class="fa-solid fa-address-card"></i> Nos coordonnées</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <i class="fa-solid fa-location-dot"></i>
+        <h4>Adresse</h4>
+        <p>123 Rue des Agriculteurs<br>Quartier Adawlato, Lomé — Togo</p>
+      </div>
+      <div class="info-card">
+        <i class="fa-solid fa-phone"></i>
+        <h4>Téléphone</h4>
+        <p>+228 90 12 34 56</p>
+      </div>
+      <div class="info-card">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>Email</h4>
+        <p>contact@agri-togo.tg</p>
+      </div>
+      <div class="info-card">
+        <i class="fa-solid fa-clock"></i>
+        <h4>Horaires</h4>
+        <p>Lun – Ven : 8h00 – 17h00<br>Sam : 8h00 – 12h00</p>
+      </div>
+    </div>
+
+    <!-- Formulaire de contact -->
+    <h2 class="section-title"><i class="fa-solid fa-paper-plane"></i> Formulaire de contact</h2>
+    <div class="form-card">
+      <form id="contactForm" novalidate>
+        <div class="form-group">
+          <label class="form-label">1. Nom complet</label>
+          <div class="form-desc">Votre identité complète</div>
+          <div class="row">
+            <div class="input-wrapper">
+              <input type="text" id="prenom" placeholder="Prénom">
+            </div>
+            <div class="input-wrapper">
+              <input type="text" id="nom" placeholder="Nom de famille">
+              <div class="error-msg" id="err-nom"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">2. Email<span class="req">*</span></label>
+          <div class="form-desc">Pour vous recontacter</div>
+          <div class="input-wrapper" id="wrap-email">
+            <i class="fa-solid fa-envelope icon"></i>
+            <input type="email" id="email" placeholder="exemple@email.com">
+          </div>
+          <div class="error-msg" id="err-email">Veuillez saisir une adresse email valide.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">5. Notes, suggestions ou questions<span class="req">*</span></label>
+          <div class="form-desc">Détaillez votre demande</div>
+          <div class="textarea-wrapper">
+            <div class="input-wrapper" id="wrap-notes">
+              <i class="fa-solid fa-list icon" style="top:22px;transform:none;"></i>
+              <textarea id="notes" placeholder="Votre message..."></textarea>
+            </div>
+            <i class="fa-solid fa-up-right-and-down-left-from-center resize-icon"></i>
+          </div>
+          <div class="error-msg" id="err-notes">Ce champ est obligatoire.</div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <i class="fa-solid fa-paper-plane"></i> Envoyer le message
+        </button>
+      </form>
+
+      <div class="success-modal" id="successContact">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>Message envoyé !</h3>
+        <p>Merci pour votre message. Nous vous recontacterons rapidement.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modal Adhésion -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-user-plus"></i> Demande d'adhésion</h2>
+        <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <form id="adhesionForm" novalidate>
+          <div class="form-group">
+            <label class="form-label">Nom complet<span class="req">*</span></label>
+            <div class="input-wrapper" id="wrap-adh-nom">
+              <i class="fa-solid fa-user icon"></i>
+              <input type="text" id="adh-nom" placeholder="Prénom et nom">
+            </div>
+            <div class="error-msg" id="err-adh-nom">Veuillez saisir votre nom.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email<span class="req">*</span></label>
+            <div class="input-wrapper" id="wrap-adh-email">
+              <i class="fa-solid fa-envelope icon"></i>
+              <input type="email" id="adh-email" placeholder="exemple@email.com">
+            </div>
+            <div class="error-msg" id="err-adh-email">Adresse email invalide.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Téléphone<span class="req">*</span></label>
+            <div class="input-wrapper" id="wrap-adh-tel">
+              <i class="fa-solid fa-phone icon"></i>
+              <input type="tel" id="adh-tel" placeholder="+228 90 12 34 56">
+            </div>
+            <div class="error-msg" id="err-adh-tel">Numéro invalide.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Type de structure<span class="req">*</span></label>
+            <div class="input-wrapper" id="wrap-adh-type">
+              <i class="fa-solid fa-building icon"></i>
+              <select id="adh-type">
+                <option value="" disabled selected>Choisissez votre structure</option>
+                <option value="producteur">Producteur individuel</option>
+                <option value="cooperative">Coopérative agricole</option>
+                <option value="compagnie">Compagnie / Entreprise</option>
+                <option value="ong">ONG / Association</option>
+                <option value="groupement">Groupement villageois</option>
+                <option value="institution">Institution publique</option>
+                <option value="particulier">Particulier / Consommateur</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="error-msg" id="err-adh-type">Veuillez sélectionner un type.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Nom de la structure</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-tag icon"></i>
+              <input type="text" id="adh-structure" placeholder="Nom de votre coopérative, entreprise, ONG...">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Zone géographique d'activité<span class="req">*</span></label>
+            <div class="input-wrapper" id="wrap-adh-zone">
+              <i class="fa-solid fa-map-location-dot icon"></i>
+              <select id="adh-zone">
+                <option value="" disabled selected>Sélectionnez une région</option>
+                <option value="maritime">Région Maritime (Lomé, Tabligbo...)</option>
+                <option value="plateaux">Région des Plateaux (Atakpamé, Kpalimé...)</option>
+                <option value="centrale">Région Centrale (Sokodé, Tchamba...)</option>
+                <option value="kara">Région de la Kara (Kara, Dapaong...)</option>
+                <option value="savanes">Région des Savanes (Dapaong, Cinkassé...)</option>
+                <option value="international">Hors Togo</option>
+              </select>
+            </div>
+            <div class="error-msg" id="err-adh-zone">Veuillez sélectionner une zone.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Produits d'intérêt</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-wheat-awn icon"></i>
+              <select name="adh-produits" id="adh-produits">
+                <option value="" disabled selected>Sélectionnez un produit principal</option>
+                <option value="mais">Maïs</option>
+                <option value="manioc">Manioc</option>
+                <option value="ananas">Ananas</option>
+                <option value="riz">Riz</option>
+                <option value="soja">Soja</option>
+                <option value="transformes">Produits transformés</option>
+                <option value="divers">Divers / Tous</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Motivation / Message<span class="req">*</span></label>
+            <div class="input-wrapper" id="wrap-adh-msg">
+              <i class="fa-solid fa-pen icon" style="top:22px;transform:none;"></i>
+              <textarea id="adh-msg" placeholder="Pourquoi souhaitez-vous rejoindre AGRI-TOGO ? Décrivez votre projet ou vos attentes..."></textarea>
+            </div>
+            <div class="error-msg" id="err-adh-msg">Veuillez décrire votre motivation.</div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="btnAdhesionSubmit">
+            <i class="fa-solid fa-paper-plane"></i> Soumettre ma demande
+          </button>
+        </form>
+
+        <div class="success-modal" id="successAdhesion">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3>Demande envoyée !</h3>
+          <p>Merci pour votre intérêt. Notre équipe étudiera votre demande et vous contactera sous 48h.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer professionnel -->
+  <footer class="footer-main">
+    <div class="footer-grid">
+      <!-- Colonne 1 : Logo & Description -->
+      <div class="footer-col">
+        <div class="footer-logo"><i class="fa-solid fa-seedling"></i> AGRI-TOGO</div>
+        <p class="footer-desc">Coopérative agricole regroupant les producteurs des régions Maritime et des Plateaux au Togo. Ensemble, cultivons l'avenir.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Colonne 2 : Liens rapides -->
+      <div class="footer-col">
+        <h4>Liens rapides</h4>
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="produits.html">Nos produits</a>
+        <a href="actualite1.html">Actualités</a>
+        <a href="contact2.html" >Contact</a>
+        <a href="#" onclick="document.getElementById('btnOpenAdhesion').click(); return false;">Adhérer à la coopérative</a>
+      </div>
+
+      <!-- Colonne 3 : Coordonnées -->
+      <div class="footer-col">
+        <h4>Nous contacter</h4>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>123 Rue des Agriculteurs<br>Quartier Adawlato, Lomé — Togo</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+228 92 88 38 74<br>+228 70 98 76 54</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>contact@agri-togo.tg<br>camaraguy10@gmail.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-clock"></i>
+          <span>Lun – Ven : 8h00 – 17h00<br>Sam : 8h00 – 12h00</span>
+        </div>
+      </div>
+
+      <!-- Colonne 4 : Newsletter -->
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Recevez nos actualités, offres de formation et événements directement dans votre boîte mail.</p>
+        <form class="footer-newsletter" id="newsletterForm" onsubmit="return false;">
+          <input type="email" placeholder="Votre email" required>
+          <button type="submit" id="newsletterForm" name="newsletterForm"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p style="margin-top:14px; font-size:12px; color:#7da87d;"><i class="fa-solid fa-shield-halved" style="margin-right:4px;"></i> Nous respectons votre vie privée.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 AGRI-TOGO — Coopérative agricole du Togo. Tous droits réservés.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Plan du site</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

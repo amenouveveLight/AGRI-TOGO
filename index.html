@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRI-TOGO — Accueil</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+       
+        <div>
+            AGRI-TOGO
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html" class="active">A propos</a></li>
+                <li><a href="produit.html">Nos produits</a></li>
+                <li><a href="actualite1.html">actualités</a></li>
+                <li><a href="contact2.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <span class="material-symbols-outlined menu-open">dehaze</span>
+            <span class="material-symbols-outlined menu-close" >close</span>
+        </div>
+    </header>
+
+    <main>
+    <section class="hero">
+  <!-- 1. Carrousel  -->
+  <div class="carousel">
+    <div class="carousel-slide active">
+      <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1400&h=500&fit=crop'" alt="Producteurs au champ">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1400&h=500&fit=crop" alt="Lancement du programme">
+    </div>
+    <div class="carousel-slide">
+      <img src="images/images45.jfif" alt="Première récolte">
+    </div>
+
+    <div class="carousel-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+    </div>
+  </div>
+
+  <!-- 2. Voile vert par-dessus les images -->
+  <div class="hero-overlay"></div>
+
+  <!-- 3. Contenu texte -->
+  <div class="hero-content">
+    <div class="hero-icon">
+      <span class="material-symbols-outlined">agriculture</span>
+    </div>
+    <h1>Cultivons ensemble un avenir agricole durable</h1>
+    <p>Une coopérative agricole togolaise qui accompagne les producteurs grâce à l'innovation, la coopération et des solutions durables pour une agriculture plus performante.</p>
+  </div>
+</section>
+        </section>
+
+        <section>
+            <div id="redirection">
+                <div id="redirecton_item">
+                    <a href="#chiffre">Chiffres clés</a>
+                </div>
+                <div>
+                    <a href="#actualite">Nos actualités</a>
+                </div>
+                <div>
+                    <a href="contact2.html">Contact</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="chiffre">
+            <h1>Chiffres clés de la coopération</h1>
+            <div id="cle">
+                <div id="cle_item">
+                    <span class="material-symbols-outlined">groups</span>
+                    <h2>320</h2>
+                    <p>Membres</p>
+                </div>
+                <div id="cle_item1">
+                    <span class="material-symbols-outlined">location_city</span>
+                    <h2>2 Régions</h2>
+                    <p>Couvertes</p>
+                </div>
+                <div id="cle_item2">
+                    <span class="material-symbols-outlined">business_center</span>
+                    <h2>9</h2>
+                    <a href="#"><p>Produits</p></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="actualite">
+            <h2>Nos actualités</h2>
+            <div id="actu">
+                <div id="actu1">
+                    <img src="images/histoire.png" alt="Annonce du programme de semences">
+                    <h3>ANNONCE</h3>
+                    <p>Lancement d'un programme national de distribution de semences améliorées</p>
+                    <time datetime="2026-08-05">Date : 5 août 2026</time>
+                    <a href="#">Lire plus</a>
+                </div>
+                <div id="actu1">
+                    <img src="images/for.jpg" alt="Formation de femmes agricultrices">
+                    <h3>Formation</h3>
+                    <p>Plus de 300 femmes formées aux techniques agricoles modernes</p>
+                    <time datetime="2025-05-12">Date : 12 mai 2025</time>
+                    <a href="#">Lire plus</a>
+                </div>
+                <div id="actu1">
+                    <img src="images/un.jfif" alt="Inauguration d'une unité de transformation">
+                    <h3>Événement</h3>
+                    <p>Inauguration d'une unité de transformation des produits agricoles</p>
+                    <time datetime="2025-12-08">Date : 8 décembre 2025</time>
+                    <a href="#">Lire plus</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="rejoignez">
+            <h2>Besoin d'informations ?</h2>
+            <p>Vous êtes adhérent, vendeur, acheteur, une ONG souhaitant être accompagnée ou un futur partenaire ?</p>
+            <button><a href="contact2.html">Contactez-nous dès maintenant</a></button>
+        </section>
+    </main>
+
+    <hr>
+
+   <footer class="footer-main">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo"><i class="fa-solid fa-seedling"></i> AGRI-TOGO</div>
+        <p class="footer-desc">Coopérative agricole regroupant les producteurs des régions Maritime et des Plateaux au Togo. Ensemble, cultivons l'avenir.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Liens rapides</h4>
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="produits.html">Nos produits</a>
+        <a href="actualite1.html">Actualités</a>
+        <a href="contact2.html">Contact</a>
+        <a href="contact2.html">Adhérer à la coopérative</a>
+      </div>
+      <div class="footer-col">
+        <h4>Nous contacter</h4>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>123 Rue des Agriculteurs<br>Quartier Adawlato, Lomé — Togo</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+228 92 88 38 74<br>+228 70 98 76 54</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>contact@agri-togo.tg<br>camaraguy10@gmail.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-clock"></i>
+          <span>Lun – Ven : 8h00 – 17h00<br>Sam : 8h00 – 12h00</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Recevez nos actualités, offres de formation et événements directement dans votre boîte mail.</p>
+        <form class="footer-newsletter" id="newsletterForm" onsubmit="return false;">
+          <input type="email" placeholder="Votre email" required>
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p style="margin-top:14px; font-size:12px; color:#7da87d;"><i class="fa-solid fa-shield-halved" style="margin-right:4px;"></i> Nous respectons votre vie privée.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AGRI-TOGO — Coopérative agricole du Togo. Tous droits réservés.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Plan du site</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
